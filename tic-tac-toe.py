@@ -18,7 +18,7 @@ WIN_LINE_WIDTH = 15
 
 # RGB Colors
 RED = (255, 0, 0)
-BG_COLOR = (28, 170, 156)
+BG_COLOR = (0,0,30)
 LINE_COLOR = (23, 145, 135)
 CIRCLE_COLOR = (255, 0, 0) 
 CROSS_COLOR = (66, 66, 66)
@@ -158,7 +158,7 @@ while game_runnigng:
 
             mouseX = event.pos[0] 
             mouseY = event.pos[1] 
-
+# 
             clicked_row = int(mouseY // SQUARE_SIZE)
             clicked_col = int(mouseX // SQUARE_SIZE)
 
@@ -173,7 +173,7 @@ while game_runnigng:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_r:
                 board = [[None]*BOARD_COLS for i in range(BOARD_ROWS)]
-                print(board)
+                # print(board)
                 game_over = False
                 player = 1
 
