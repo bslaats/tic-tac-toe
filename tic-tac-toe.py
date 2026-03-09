@@ -148,16 +148,16 @@ def main():
 
     # Player 1 - Circle
     player = 1
-    game_runnigng = True
-    while game_runnigng:
+    game_running = True
+    while game_running:
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                game_runnigng = False
+                game_running = False
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    game_runnigng = False
+                    game_running = False
 
             if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
 
@@ -170,6 +170,8 @@ def main():
                 if available_square(clicked_row, clicked_col):
                     mark_square(clicked_row, clicked_col, player)
                     if check_win(player):
+                        game_over = True
+                    elif check_tie():
                         game_over = True
                     player = player % 2 + 1
 
